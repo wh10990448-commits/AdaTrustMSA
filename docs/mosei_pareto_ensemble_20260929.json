@@ -1,0 +1,38 @@
+{
+  "method": "validation-selected Pareto checkpoint ensemble",
+  "protocol": "MMSA clean regression",
+  "data_split_sizes": {
+    "train": 16326,
+    "valid": 1871,
+    "test": 4659
+  },
+  "selection_split": "valid",
+  "evaluation_split": "test",
+  "regression_checkpoint_weight": 0.45,
+  "pareto_checkpoint_weight": 0.55,
+  "validation_metrics": {
+    "acc_7": 0.547300908605024,
+    "nonzero_acc_2": 0.8581363004172462,
+    "nonzero_f1": 0.8576005082680914,
+    "mae": 0.5132208018922578,
+    "corr": 0.751286713431817
+  },
+  "test_metrics": {
+    "acc_7": 0.54045932603563,
+    "nonzero_acc_2": 0.852504127682994,
+    "nonzero_f1": 0.8522517580003405,
+    "mae": 0.5343600648976017,
+    "corr": 0.7647916257324435
+  },
+  "e_moe_aligned_reference": {
+    "acc_7": 0.541,
+    "nonzero_acc_2": 0.853,
+    "nonzero_f1": 0.853,
+    "mae": 0.536
+  },
+  "notes": [
+    "Ensemble weight was selected on validation data only.",
+    "MAE is lower than the E-MoE reference by 0.0016399351.",
+    "Acc-7, Acc-2 and F1 remain slightly below E-MoE and are not claimed as improvements."
+  ]
+}

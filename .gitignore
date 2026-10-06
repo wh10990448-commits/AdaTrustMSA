@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments and IDEs
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Data, checkpoints and generated results
+data/
+models/
+runs/
+results/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.pkl
+*.csd
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

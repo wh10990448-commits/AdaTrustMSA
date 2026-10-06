@@ -1,0 +1,55 @@
+{
+  "version": "adatrustmsa_2.2_mosei_paper_protocol",
+  "seed": 1111,
+  "epochs": 30,
+  "early_stopping_patience": 8,
+  "batch_size": 16,
+  "eval_batch_size": 64,
+  "bert_lr": 0.00001,
+  "head_lr": 0.0001,
+  "weight_decay": 0.00001,
+  "warmup_fraction": 0.1,
+  "gradient_clip": 1.0,
+  "dropout": 0.1,
+  "hidden": 128,
+  "fusion_layers": 2,
+  "fusion_heads": 4,
+  "fusion_expansion": 2,
+  "prediction_blending": false,
+  "attentive_pooling": false,
+  "quality_attention": true,
+  "quality_attention_strength": 1.0,
+  "class_weight_power": 0.0,
+  "label_smoothing": 0.0,
+  "uncertainty_penalty": 0.35,
+  "conflict_penalty": 0.65,
+  "loss_weights": {
+    "classification": 0.2,
+    "heteroscedastic_regression": 1.0,
+    "reliability": 0.05,
+    "unimodal_classification": 0.0,
+    "unimodal_regression": 0.15,
+    "expert_classification": 0.0,
+    "brier": 0.0
+  },
+  "corruption": {
+    "probability": 0.0,
+    "ratio_range": [0.1, 0.6],
+    "gaussian_probability": 0.35,
+    "cascade_dropout_probability": 0.0
+  },
+  "validation": {
+    "corruption_seed": 20260928,
+    "corruption_ratio": 0.4,
+    "selection_mode": "mmsa_clean_mae",
+    "selection": "minimum clean validation MMSA MAE"
+  },
+  "policy": {
+    "prefixes": [0.25, 0.5, 0.75, 1.0],
+    "modality_order": ["T", "A", "V"],
+    "modality_threshold": 0.6,
+    "exit_threshold_candidates": [0.5, 0.6, 0.7, 0.8],
+    "minimum_exit_prefix": 0.5,
+    "require_temporal_stability": true
+  }
+}

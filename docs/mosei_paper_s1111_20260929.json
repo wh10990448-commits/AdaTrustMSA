@@ -1,0 +1,15 @@
+{
+  "protocol": "MMSA clean regression",
+  "split": "test",
+  "n": 4659,
+  "checkpoint": "runs/mosei_paper_s1111_20260929/best.pt",
+  "checkpoint_epoch": 9,
+  "selected_on": "validation mmsa_mae",
+  "mmsa_acc_7": 0.5436789010517279,
+  "mmsa_non0_acc_2": 0.8445239405613649,
+  "mmsa_non0_f1": 0.8443440837668141,
+  "mmsa_has0_acc_2": 0.8164842240824212,
+  "mmsa_has0_f1": 0.8209878934924865,
+  "mmsa_mae": 0.5383162203361406,
+  "mmsa_corr": 0.7561830651097822
+}

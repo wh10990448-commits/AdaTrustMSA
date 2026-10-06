@@ -1,0 +1,60 @@
+{
+  "version": "adatrustmsa_2.3_pareto_unimodal_distillation",
+  "seed": 1111,
+  "epochs": 12,
+  "early_stopping_patience": 4,
+  "batch_size": 16,
+  "eval_batch_size": 64,
+  "bert_lr": 0.000005,
+  "head_lr": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.05,
+  "gradient_clip": 1.0,
+  "dropout": 0.1,
+  "hidden": 128,
+  "fusion_layers": 2,
+  "fusion_heads": 4,
+  "fusion_expansion": 2,
+  "prediction_blending": false,
+  "attentive_pooling": false,
+  "quality_attention": true,
+  "quality_attention_strength": 1.0,
+  "class_weight_power": 0.0,
+  "label_smoothing": 0.0,
+  "distillation_temperature": 2.0,
+  "bert_freeze_epochs": 1,
+  "bert_unfreeze_top_layers": 4,
+  "uncertainty_penalty": 0.35,
+  "conflict_penalty": 0.65,
+  "loss_weights": {
+    "classification": 0.5,
+    "heteroscedastic_regression": 0.7,
+    "fused_regression": 0.35,
+    "reliability": 0.02,
+    "unimodal_classification": 0.1,
+    "unimodal_regression": 0.1,
+    "expert_classification": 0.05,
+    "unimodal_distillation": 0.08,
+    "brier": 0.02
+  },
+  "corruption": {
+    "probability": 0.0,
+    "ratio_range": [0.1, 0.6],
+    "gaussian_probability": 0.35,
+    "cascade_dropout_probability": 0.0
+  },
+  "validation": {
+    "corruption_seed": 20260928,
+    "corruption_ratio": 0.4,
+    "selection_mode": "mmsa_pareto",
+    "selection": "validation-only normalized Acc-7/Acc-2/F1/MAE/Corr Pareto score"
+  },
+  "policy": {
+    "prefixes": [0.25, 0.5, 0.75, 1.0],
+    "modality_order": ["T", "A", "V"],
+    "modality_threshold": 0.6,
+    "exit_threshold_candidates": [0.5, 0.6, 0.7, 0.8],
+    "minimum_exit_prefix": 0.5,
+    "require_temporal_stability": true
+  }
+}
