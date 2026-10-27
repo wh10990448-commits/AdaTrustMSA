@@ -23,7 +23,29 @@ The repository provides two experiment tracks:
 This is an independent implementation. It is not an official implementation of
 E-MoE, QA-MoE, or any other published method.
 
-## UR-FUNNY V1 Humor Classification
+## Practical Application Scenarios
+
+### Humor Review Assistance for Speech and Educational Videos
+
+This application scenario targets **public-talk video archives, university
+lecture-production teams, and online-course editors**. The intended workflow is
+to flag potentially humorous utterances, retain their preceding context, and
+present candidates for a person to review when preparing excerpts or summaries.
+Recorded public talks are the closest tested domain; use on ordinary classroom
+or online-course recordings is a proposed extension.
+
+**Why this matters:** editors reviewing long recordings must find candidate
+moments and check their surrounding discussion. A humor-review queue could
+help prioritise that work and preserve the setup needed to understand a joke.
+Humor can depend on wording, vocal delivery and visible expression, which makes
+this a practical task for text/audio/visual fusion. This multimodal motivation
+is supported by the [UR-FUNNY paper](https://aclanthology.org/D19-1211/).
+
+The experiment below validates the **utterance-classification component** of
+that proposed workflow. Review-time savings, clip-boundary quality, learning
+outcomes and deployment on course recordings have not been measured.
+
+### UR-FUNNY V1 Humor Classification
 
 AdaTrustMSA's feature adapter was trained and evaluated on the official
 **UR-FUNNY V1** train/validation/test folds for binary humor classification.
@@ -48,6 +70,7 @@ are not directly comparable with cleaned V2 results, and no state-of-the-art
 claim is made.
 
 [Official V1 data](https://github.com/ROC-HCI/UR-FUNNY/blob/master/UR-FUNNY-V1.md)
+| [Application setting, importance and workflow](docs/UR_FUNNY_APPLICATION_SCENARIO.md)
 | [Protocol, limitations and full results](docs/UR_FUNNY_V1_RESULTS.md)
 | [Machine-readable metrics](docs/results/urfunny_v1_20261026/context_metrics.json)
 

@@ -1,16 +1,34 @@
-# UR-FUNNY V1 application experiment
+# UR-FUNNY V1 evidence for humor review assistance
 
 AdaTrustMSA's feature adapter completed training, validation and evaluation on
 the official UR-FUNNY V1 folds on an NVIDIA RTX 4090. The context model achieved
 **68.84% accuracy and 0.6884 Macro-F1 on all 3,290 test samples**. These are
 measurements from this project, not results copied from the official paper.
 
+## Practical application and importance
+
+This experiment supports a research prototype for **humor review assistance in
+speech and educational-video editing**. Intended users include public-talk
+archive editors, university lecture-production staff and online-course content
+teams. A proposed review tool would flag candidate humorous utterances together
+with their preceding context for an editor to inspect.
+
+The practical motivation is to help editors prioritise candidate moments in a
+long recording and preserve the setup that gives a punchline its meaning.
+The [UR-FUNNY paper](https://aclanthology.org/D19-1211/) uses TED talks and
+models humor through textual, acoustic and visual cues with preceding context,
+making recorded public talks the closest benchmark-supported setting. Use on
+ordinary classroom or online-course recordings requires a new domain evaluation.
+
+The measurements below validate utterance-level humor classification on the
+benchmark. They do not measure review-time savings, automatic clip boundaries,
+learning outcomes or a deployed editing system. See the [application workflow
+and validation requirements](UR_FUNNY_APPLICATION_SCENARIO.md).
+
 ## Task and data
 
 The task is binary humor classification: 0 is non-humorous and 1 is humorous.
-A possible research application is prioritising humorous utterances in a
-speech/video review tool. No deployed editing system or sentiment-classification
-result is established by this experiment.
+The prediction target is humor, separate from positive/negative sentiment.
 
 The [official V1 feature release](https://github.com/ROC-HCI/UR-FUNNY/blob/master/UR-FUNNY-V1.md)
 and its unmodified `data_folds.pkl` were used. Sample IDs are unique and disjoint

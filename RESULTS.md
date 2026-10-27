@@ -58,12 +58,20 @@ Full experimental conditions and machine-readable results are available in
 `docs/MOSEI_PAPER_PROTOCOL_RESULTS.md`, `docs/DEEP_FUSION_RESULTS.md`, and the
 JSON files under `docs/`.
 
-## 3. UR-FUNNY V1 Humor Classification
+## 3. Application Scenario: Humor Review Assistance
+
+**Intended setting:** public-talk archives, university lecture-production teams
+and online-course editing workflows. Flagging potentially humorous utterances
+with their context could help an editor prioritise review and avoid extracting
+a punchline without its setup. This is the proposed practical value; review
+efficiency and educational benefits have not been measured.
 
 This separate application experiment uses official V1 folds: **10,598 train /
 2,626 validation / 3,290 test** samples. It predicts binary humor labels from
 provided text, audio and visual features. These results belong to this project's
 feature adapter and use a different task and protocol from CMU-MOSEI above.
+The result measures the utterance-classification component of the proposed
+workflow; transfer to ordinary course recordings remains to be evaluated.
 
 | Method | Test accuracy | Test Macro-F1 | Test ROC-AUC |
 |---|---:|---:|---:|
@@ -77,6 +85,7 @@ this does not establish statistical significance or a published-model ranking.
 No original MOSEI checkpoint was used. Raw-video inference and the adaptive
 acquisition/early-exit policy were not evaluated.
 
-See [the complete UR-FUNNY V1 report](docs/UR_FUNNY_V1_RESULTS.md),
+See [the application scenario and its importance](docs/UR_FUNNY_APPLICATION_SCENARIO.md),
+[the complete UR-FUNNY V1 report](docs/UR_FUNNY_V1_RESULTS.md),
 [original recorded metrics](docs/results/urfunny_v1_20261026/context_metrics.json)
 and [all numeric test predictions](docs/results/urfunny_v1_20261026/test_predictions.csv).
