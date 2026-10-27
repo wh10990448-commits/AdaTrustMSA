@@ -1,0 +1,73 @@
+{
+  "dataset": "UR-FUNNY",
+  "version": "official V1",
+  "task": "binary humor classification",
+  "labels": {
+    "0": "non-humorous",
+    "1": "humorous"
+  },
+  "counts": {
+    "train": 10598,
+    "val": 2626,
+    "test": 3290
+  },
+  "class_counts": {
+    "train": [
+      5292,
+      5306
+    ],
+    "val": [
+      1313,
+      1313
+    ],
+    "test": [
+      1652,
+      1638
+    ]
+  },
+  "widths": [
+    300,
+    81,
+    75
+  ],
+  "max_context": 8,
+  "nonfinite_feature_values": {
+    "train": [
+      0,
+      0,
+      0
+    ],
+    "val": [
+      0,
+      0,
+      0
+    ],
+    "test": [
+      0,
+      0,
+      0
+    ]
+  },
+  "split_protocol": "Unmodified official V1 data_folds.pkl; no overlapping sample IDs",
+  "representation": "Word means per context sentence in order, then final utterance; last max_context sentences",
+  "inputs": [
+    "GloVe text",
+    "COVAREP audio",
+    "OpenFace vision"
+  ],
+  "source": "https://github.com/ROC-HCI/UR-FUNNY/blob/master/UR-FUNNY-V1.md",
+  "source_files": {
+    "data_folds.pkl": "e9b872b34f6de88aa7e87d0a70ed8cdb8f37429b9d4822c455e4eb2ca1fb8fe2",
+    "word_embedding_list.pkl": "d74de5f6a1c438e12e9388bb3b5d0045c32906de87a84c7ef8b94f922e1085d7",
+    "word_embedding_indexes_sdk.pkl": "f94efd2c35845197fb74b6f3cd2b85aab84fabfe8218ca6c2acb29a8168b67d0",
+    "covarep_features_sdk.pkl": "bb43d2d65e40ba974cba7f406633ebc1ad9a34a0346d14bfd14ff13540fca09b",
+    "openface_features_sdk.pkl": "a78b8f1957244b5c38d3fcad84f018db3398f3608e209d0614fb8ce90fba7cf6",
+    "humor_label_sdk.pkl": "fa7309780d2229ddeeff33df508edd8d0201905f2b93a50c4fca5984d1a40eb3"
+  },
+  "data_sha256": "7f8851ba307c651e6a8d0910ccac210ebef3cf899e0cfaf2cbffa169d9533e5d",
+  "limitations": [
+    "V1 rather than cleaned V2; overlapping instances removed by V2 may remain in V1",
+    "This package does not contain speaker identities; speaker isolation is not independently verified",
+    "Sentence means discard within-sentence timing; no raw-video/ASR inference"
+  ]
+}

@@ -57,3 +57,26 @@ They are not directly comparable to the standard non-zero MMSA metrics above.
 Full experimental conditions and machine-readable results are available in
 `docs/MOSEI_PAPER_PROTOCOL_RESULTS.md`, `docs/DEEP_FUSION_RESULTS.md`, and the
 JSON files under `docs/`.
+
+## 3. UR-FUNNY V1 Humor Classification
+
+This separate application experiment uses official V1 folds: **10,598 train /
+2,626 validation / 3,290 test** samples. It predicts binary humor labels from
+provided text, audio and visual features. These results belong to this project's
+feature adapter and use a different task and protocol from CMU-MOSEI above.
+
+| Method | Test accuracy | Test Macro-F1 | Test ROC-AUC |
+|---|---:|---:|---:|
+| Logistic regression with context | 66.23% | 0.6622 | 0.7149 |
+| AdaTrustMSA, final utterance only | 68.51% | 0.6847 | 0.7471 |
+| **AdaTrustMSA with context** | **68.84%** | **0.6884** | **0.7517** |
+
+The context adapter exceeds its context-matched linear baseline by **2.61
+percentage points** in accuracy. Only seed **2026** was run for this experiment;
+this does not establish statistical significance or a published-model ranking.
+No original MOSEI checkpoint was used. Raw-video inference and the adaptive
+acquisition/early-exit policy were not evaluated.
+
+See [the complete UR-FUNNY V1 report](docs/UR_FUNNY_V1_RESULTS.md),
+[original recorded metrics](docs/results/urfunny_v1_20261026/context_metrics.json)
+and [all numeric test predictions](docs/results/urfunny_v1_20261026/test_predictions.csv).

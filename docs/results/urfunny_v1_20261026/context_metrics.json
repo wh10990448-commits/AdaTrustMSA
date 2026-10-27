@@ -1,0 +1,300 @@
+{
+  "dataset": "UR-FUNNY",
+  "version": "official V1",
+  "seed": 2026,
+  "context": true,
+  "counts": {
+    "train": 10598,
+    "val": 2626,
+    "test": 3290
+  },
+  "widths": [
+    300,
+    81,
+    75
+  ],
+  "protocol": "Unmodified official V1 data_folds.pkl; no overlapping sample IDs",
+  "dataset_sha256": "7f8851ba307c651e6a8d0910ccac210ebef3cf899e0cfaf2cbffa169d9533e5d",
+  "settings": {
+    "epochs_max": 30,
+    "patience": 6,
+    "learning_rate": 0.0007,
+    "batch_size": 128,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "selection": "validation macro-F1",
+    "clip_grad": 5.0,
+    "hidden": 48,
+    "fusion_layers": 2,
+    "dropout": 0.2,
+    "training_noise_std": [
+      0.0,
+      0.25,
+      0.5
+    ],
+    "modality_dropout_probability": 0.1
+  },
+  "results": {
+    "majority": {
+      "n": 3290,
+      "accuracy": 0.4978723404255319,
+      "macro_f1": 0.33238636363636365,
+      "weighted_f1": 0.33097195357833653,
+      "auc": 0.5,
+      "brier": 0.502127659574468,
+      "ece_10": 0.5021276595744681,
+      "confusion_matrix": [
+        [
+          0,
+          1652
+        ],
+        [
+          0,
+          1638
+        ]
+      ]
+    },
+    "logistic_TAV": {
+      "n": 3290,
+      "accuracy": 0.6623100303951368,
+      "macro_f1": 0.6621861602230139,
+      "weighted_f1": 0.66221368692793,
+      "auc": 0.714888454295234,
+      "brier": 0.22039399977787805,
+      "ece_10": 0.054121846557642225,
+      "confusion_matrix": [
+        [
+          1121,
+          531
+        ],
+        [
+          580,
+          1058
+        ]
+      ]
+    },
+    "adapter_TAV": {
+      "n": 3290,
+      "accuracy": 0.6884498480243161,
+      "macro_f1": 0.6884495889770328,
+      "weighted_f1": 0.6884483800897107,
+      "auc": 0.751666311896336,
+      "brier": 0.20337857506101562,
+      "ece_10": 0.01887297715459549,
+      "confusion_matrix": [
+        [
+          1131,
+          521
+        ],
+        [
+          504,
+          1134
+        ]
+      ]
+    },
+    "adapter_TA": {
+      "n": 3290,
+      "accuracy": 0.6851063829787234,
+      "macro_f1": 0.6850686753636119,
+      "weighted_f1": 0.6850540112910685,
+      "auc": 0.7480169816731561,
+      "brier": 0.2043605179468434,
+      "ece_10": 0.01277452142042955,
+      "confusion_matrix": [
+        [
+          1109,
+          543
+        ],
+        [
+          493,
+          1145
+        ]
+      ]
+    },
+    "adapter_TV": {
+      "n": 3290,
+      "accuracy": 0.6714285714285714,
+      "macro_f1": 0.671428298228461,
+      "weighted_f1": 0.6714295731623099,
+      "auc": 0.7407881666356243,
+      "brier": 0.20771061724348802,
+      "ece_10": 0.02872413690329323,
+      "confusion_matrix": [
+        [
+          1106,
+          546
+        ],
+        [
+          535,
+          1103
+        ]
+      ]
+    },
+    "adapter_AV": {
+      "n": 3290,
+      "accuracy": 0.5753799392097264,
+      "macro_f1": 0.5750403751077972,
+      "weighted_f1": 0.5750914922844317,
+      "auc": 0.6059540069830627,
+      "brier": 0.24329455787802076,
+      "ece_10": 0.03810447179075434,
+      "confusion_matrix": [
+        [
+          993,
+          659
+        ],
+        [
+          738,
+          900
+        ]
+      ]
+    },
+    "adapter_T": {
+      "n": 3290,
+      "accuracy": 0.6671732522796353,
+      "macro_f1": 0.6671264769700457,
+      "weighted_f1": 0.6671096858332699,
+      "auc": 0.7364150679828646,
+      "brier": 0.20994732034367178,
+      "ece_10": 0.043051565037672296,
+      "confusion_matrix": [
+        [
+          1078,
+          574
+        ],
+        [
+          521,
+          1117
+        ]
+      ]
+    },
+    "adapter_A": {
+      "n": 3290,
+      "accuracy": 0.5671732522796352,
+      "macro_f1": 0.567132301390104,
+      "weighted_f1": 0.567114385375934,
+      "auc": 0.5945934110280358,
+      "brier": 0.2487266372419927,
+      "ece_10": 0.06757025809273534,
+      "confusion_matrix": [
+        [
+          917,
+          735
+        ],
+        [
+          689,
+          949
+        ]
+      ]
+    },
+    "adapter_V": {
+      "n": 3290,
+      "accuracy": 0.5300911854103344,
+      "macro_f1": 0.4947612047043865,
+      "weighted_f1": 0.4953297331295397,
+      "auc": 0.5544186275118479,
+      "brier": 0.252341600915192,
+      "ece_10": 0.0660675712994167,
+      "confusion_matrix": [
+        [
+          1307,
+          345
+        ],
+        [
+          1201,
+          437
+        ]
+      ]
+    },
+    "adapter_TAV_feature_noise_std_0.5": {
+      "n": 3290,
+      "accuracy": 0.6866261398176292,
+      "macro_f1": 0.6866254160286214,
+      "weighted_f1": 0.6866233894193996,
+      "auc": 0.7428031512474612,
+      "brier": 0.20618075326733074,
+      "ece_10": 0.024600955852983945,
+      "confusion_matrix": [
+        [
+          1127,
+          525
+        ],
+        [
+          506,
+          1132
+        ]
+      ]
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.8814391091645483,
+      "val_accuracy": 0.6725057121096725,
+      "val_macro_f1": 0.6719300569919764
+    },
+    {
+      "epoch": 2,
+      "loss": 0.8255831764405033,
+      "val_accuracy": 0.6827875095201827,
+      "val_macro_f1": 0.6827672220824357
+    },
+    {
+      "epoch": 3,
+      "loss": 0.781099586601717,
+      "val_accuracy": 0.6812642802741813,
+      "val_macro_f1": 0.6805634620775913
+    },
+    {
+      "epoch": 4,
+      "loss": 0.7448685485196401,
+      "val_accuracy": 0.682025894897182,
+      "val_macro_f1": 0.6816435925747666
+    },
+    {
+      "epoch": 5,
+      "loss": 0.6981744629790984,
+      "val_accuracy": 0.6782178217821783,
+      "val_macro_f1": 0.6779409188488679
+    },
+    {
+      "epoch": 6,
+      "loss": 0.6434910275849951,
+      "val_accuracy": 0.6667936024371668,
+      "val_macro_f1": 0.6662185257252511
+    },
+    {
+      "epoch": 7,
+      "loss": 0.5930541258260428,
+      "val_accuracy": 0.6698400609291698,
+      "val_macro_f1": 0.66938896243894
+    },
+    {
+      "epoch": 8,
+      "loss": 0.544926187001079,
+      "val_accuracy": 0.6622239146991622,
+      "val_macro_f1": 0.6620168374747938
+    }
+  ],
+  "code_sha256": {
+    "application_experiment.py": "7103938c8797834fb489f0ae4a42b9d71f1942639a957f8e97d2fcfd415be11b",
+    "application_data.py": "f8187248e4cfbbd0b716c7f74ccbea06f7c1cc13e89e597e38ec2f31191dcd3d",
+    "adatrustmsa_model.py": "0f59696c6ba016f94e51a6127221731c100b1046b194d40bbabef7ba87d4f7d0"
+  },
+  "selected_epoch": 2,
+  "temperature": 1.0876020170097613,
+  "training_and_evaluation_seconds": 52.081859199970495,
+  "trainable_parameters": 597584,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "adapter": "New sentence BiGRU encoders and binary heads + original AdaTrustMSA fusion; trained from scratch",
+  "limitations": [
+    "V1 rather than cleaned V2; overlapping instances removed by V2 may remain in V1",
+    "This package does not contain speaker identities; speaker isolation is not independently verified",
+    "Sentence means discard within-sentence timing; no raw-video/ASR inference",
+    "Single seed feasibility run",
+    "Missing-modality results mask the same trained model; these are not separately trained unimodal baselines",
+    "Temperature fitted on full-modality validation only; missing-route calibration is not independently fitted",
+    "Feature noise is synthetic; no raw recording robustness or application deployment is proven",
+    "Original adaptive acquisition/early-exit policy is not evaluated in this adapter"
+  ]
+}

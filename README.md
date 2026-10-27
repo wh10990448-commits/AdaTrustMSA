@@ -23,6 +23,34 @@ The repository provides two experiment tracks:
 This is an independent implementation. It is not an official implementation of
 E-MoE, QA-MoE, or any other published method.
 
+## UR-FUNNY V1 Humor Classification
+
+AdaTrustMSA's feature adapter was trained and evaluated on the official
+**UR-FUNNY V1** train/validation/test folds for binary humor classification.
+It uses supplied text, acoustic and visual features with up to eight preceding
+context sentences, and reaches **68.84% accuracy / 0.6884 Macro-F1**
+on all **3,290 held-out test samples**.
+
+| Method | Test accuracy | Test Macro-F1 |
+|---|---:|---:|
+| Logistic regression with context | 66.23% | 0.6622 |
+| AdaTrustMSA adapter, final utterance only | 68.51% | 0.6847 |
+| **AdaTrustMSA adapter with context** | **68.84%** | **0.6884** |
+
+![UR-FUNNY V1 test results](docs/figures/urfunny_round1.png)
+
+These are **this project's measurements**, not the official UR-FUNNY paper's
+results. This is a **single-seed feasibility experiment (seed 2026)** using
+pre-extracted features and newly trained encoders/heads with the existing fusion
+core. It evaluates humor classification; the original BERT/raw-video input path
+and adaptive acquisition/early-exit policy are not evaluated here. V1 results
+are not directly comparable with cleaned V2 results, and no state-of-the-art
+claim is made.
+
+[Official V1 data](https://github.com/ROC-HCI/UR-FUNNY/blob/master/UR-FUNNY-V1.md)
+| [Protocol, limitations and full results](docs/UR_FUNNY_V1_RESULTS.md)
+| [Machine-readable metrics](docs/results/urfunny_v1_20261026/context_metrics.json)
+
 ## Highlights
 
 - **Text-audio-visual modeling** with BERT and bidirectional recurrent modality
