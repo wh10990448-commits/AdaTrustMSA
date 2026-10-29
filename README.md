@@ -7,6 +7,16 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Dataset](https://img.shields.io/badge/Dataset-CMU--MOSEI-orange.svg)](https://github.com/CMU-MultiComp-Lab/CMU-MultimodalSDK)
 
+## Application Showcase
+
+![Six application scenarios and measured benchmark results](docs/figures/application_showcase_20261029.png)
+
+**Explore:** [Where it could be used](#practical-application-scenarios) ·
+[Why these scenarios matter](docs/APPLICATION_SCENARIOS.md) ·
+[Results and baseline comparisons](docs/APPLICATION_EXPERIMENTS_20261029.md)
+
+## Project Overview
+
 AdaTrustMSA is a PyTorch project for multimodal sentiment analysis with text,
 audio, and visual signals. It combines reliability-aware deep fusion,
 uncertainty estimation, controlled noise training, dynamic modality acquisition,
@@ -25,63 +35,35 @@ E-MoE, QA-MoE, or any other published method.
 
 ## Practical Application Scenarios
 
-The completed experiments below support **predictor components** for practical
-review tools. They do not measure a deployed product, review-time savings or
-performance on a particular company's recordings. Importance is the proposed
-operational value, distinguished from the benchmark measurement.
+**The applications below use measured predictor components in proposed human
+review workflows.** Their practical value is the intended use; review-time
+savings, real customer-service outcomes and production deployment were not
+measured.
 
-| Where it could be used | Predictor and why it matters | Dataset-backed evidence |
+| Scenario | Why it matters | Verified predictor result |
 |---|---|---|
-| Product-research teams and opinion-video review tools | Tag sentiment polarity/intensity so reviewers can organise feedback and inspect changing opinions | CMU-MOSEI: nonzero Acc2 **86.36%**, weighted F1 **0.8636**, MAE **0.5133**; 4,659 test segments |
-| Conversation-review and customer-feedback research tools | Flag sentiment-bearing turns for human follow-up instead of reducing a whole conversation to one label | MELD: **68.07% accuracy / 0.6466 Macro-F1**; all 2,610 test utterances; text+audio only; TV-dialogue proxy |
-| Chinese video platforms and media-asset libraries | Attach polarity/intensity tags to indexed clips, supporting filtered retrieval and human review | CH-SIMS v2(s): validation safeguard **81.56% Acc2 / 0.2982 MAE**; all 1,034 test clips |
-| Dialogue annotation, interview replay and content-review tools | Present possible sarcasm with context before a reviewer interprets an utterance literally | MUStARD: validation safeguard **71.50% accuracy / 0.7149 Macro-F1**; five-fold coverage of all 690 examples per seed |
-| Video assistants and intent-triage research tools | Separate requests, complaints, suggestions and other intents to help a person prioritise the next response | MIntRec: selected seed 2026 **74.83% accuracy / 0.7219 Macro-F1**; all 445 test utterances; TV-dialogue proxy |
-| Public-talk archives and educational-video production teams | Review candidate humorous utterances with their setup when preparing excerpts or summaries | Preserved UR-FUNNY V1 result **68.84% accuracy / 0.6884 Macro-F1**; all 3,290 test samples; no new BGE result |
+| **Opinion video review** for product-research teams | Organise expressed opinions by polarity and intensity for qualitative review | **MOSEI: 86.36% nonzero Acc2; MAE 0.5133** |
+| **Conversation sentiment review** for feedback-research teams | Surface relevant turns while keeping a person responsible for interpretation | **MELD: 68.07% accuracy; Macro-F1 0.6466**; text + audio |
+| **Chinese clip tagging** for media-asset libraries | Add sentiment metadata to support filtering and candidate retrieval | **CH-SIMS: 81.56% Acc2; MAE 0.2982**; validation safeguard |
+| **Sarcasm review** for dialogue annotation and interview replay | Retain context before interpreting ambiguous wording literally | **MUStARD: 71.50% accuracy; Macro-F1 0.7149**; validation safeguard |
+| **Intent triage** for video-assistant research | Distinguish a requested action from emotional tone when organising a response queue | **MIntRec: 74.83% accuracy; Macro-F1 0.7219**; selected single run |
+| **Humor review** for public-talk and educational-video editors | Find candidate excerpts without losing the preceding setup | **UR-FUNNY V1: 68.84% accuracy; Macro-F1 0.6884**; preserved historical result |
 
-The MOSEI/MELD values are actual **RTX 4090 GPU** measurements from 2026-10-29,
-averaged over three new BGE/LoRA branch seeds on fixed original backbones.
-MUStARD/CH-SIMS are CPU task-adaptation results across three original backbone
-seeds. MIntRec and the preserved UR-FUNNY result use their declared single primary
-seed. These aggregation units and tasks must not be treated as one common ranking.
+**How to read the evidence.** MOSEI/MELD are RTX 4090 results averaged over three
+new BGE/LoRA branch seeds on fixed original backbones. MUStARD/CH-SIMS average
+three original backbone seeds; MIntRec/UR-FUNNY use their declared single
+primary run. Chinese tagging uses Chinese BGE; MELD has no vision input. These
+are task-specific adaptations, with different anchors and prediction targets.
 
-The new task adaptations retain old encoders/fusion and local-evidence/SAM heads,
-then add a BGE CLS branch with LoRA where matched text is available. Chinese
-sentiment uses Chinese BGE and regression; MELD has no vision input. These are
-dataset-specific adaptations, not unchanged reconstructions of the complete
-MIntRec BERT architecture. The original inference and adaptive-exit APIs below
-remain separate from these documented experiments.
+**Baseline context.** MOSEI/MELD improve their original models. MUStARD remains
+below the measured SVM (71.59%). CH-SIMS improves Ridge MAE but remains below
+Ridge Acc2 (82.11%). MIntRec is one net correct test prediction above the actual
+same-seed TCL-MAP rerun (74.61%), with extra BGE capacity. The
+[full report](docs/APPLICATION_EXPERIMENTS_20261029.md) retains candidate and
+fallback results and does not claim stable superiority over recent strong models.
 
-**Baseline status:** MOSEI/MELD improve their own original models. MUStARD remains
-slightly below the measured SVM (**71.59%**). CH-SIMS improves Ridge MAE
-(**0.2982 vs 0.3123**) but remains below Ridge Acc2 (**81.56% vs 82.11%**).
-MIntRec's selected score is slightly above the actual same-seed TCL-MAP rerun
-(**74.83% vs 74.61%**, one net correct example), with additional BGE capacity.
-These results do not establish stable superiority over recent strong baselines
-or state-of-the-art performance.
-
-[Application settings, importance and workflows](docs/APPLICATION_SCENARIOS.md) ·
-[Protocols, old/new comparisons and candidate results](docs/APPLICATION_EXPERIMENTS_20261029.md) ·
-[Machine-readable evidence](docs/results/application_scenarios_20261029/metrics.json)
-
-### Why These Scenarios Matter
-
-- **Opinion-video analysis:** polarity and intensity provide complementary ways
-  to organise large feedback collections. A segment index can preserve the
-  expressed view and its context for a researcher to inspect. The experiment
-  measures sentiment prediction, not product satisfaction or research efficiency.
-- **Conversation sentiment review:** different turns can express different
-  reactions. Per-turn tags could support a review queue, but MELD's scripted
-  dialogue does not validate actual customer-call outcomes or service quality.
-- **Chinese media retrieval:** sentiment metadata adds a way to browse speech
-  clips beyond keywords alone. Retrieval relevance and editing time still need
-  to be tested; the current benchmark measures the tagging component.
-- **Sarcasm-aware review:** literal wording can misrepresent intended meaning.
-  Keeping the target with its context gives a reviewer evidence to inspect;
-  predictions remain review cues rather than automatic judgments about intent.
-- **Intent triage:** emotion and requested action are different labels. Intent
-  categories can help structure a response queue, while real support traffic
-  and operational routing decisions require separate validation.
+[Detailed settings, importance and workflows](docs/APPLICATION_SCENARIOS.md) ·
+[Numeric evidence](docs/results/application_scenarios_20261029/metrics.json)
 
 ### Humor Review Assistance for Speech and Educational Videos
 
