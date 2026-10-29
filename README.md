@@ -25,6 +25,64 @@ E-MoE, QA-MoE, or any other published method.
 
 ## Practical Application Scenarios
 
+The completed experiments below support **predictor components** for practical
+review tools. They do not measure a deployed product, review-time savings or
+performance on a particular company's recordings. Importance is the proposed
+operational value, distinguished from the benchmark measurement.
+
+| Where it could be used | Predictor and why it matters | Dataset-backed evidence |
+|---|---|---|
+| Product-research teams and opinion-video review tools | Tag sentiment polarity/intensity so reviewers can organise feedback and inspect changing opinions | CMU-MOSEI: nonzero Acc2 **86.36%**, weighted F1 **0.8636**, MAE **0.5133**; 4,659 test segments |
+| Conversation-review and customer-feedback research tools | Flag sentiment-bearing turns for human follow-up instead of reducing a whole conversation to one label | MELD: **68.07% accuracy / 0.6466 Macro-F1**; all 2,610 test utterances; text+audio only; TV-dialogue proxy |
+| Chinese video platforms and media-asset libraries | Attach polarity/intensity tags to indexed clips, supporting filtered retrieval and human review | CH-SIMS v2(s): validation safeguard **81.56% Acc2 / 0.2982 MAE**; all 1,034 test clips |
+| Dialogue annotation, interview replay and content-review tools | Present possible sarcasm with context before a reviewer interprets an utterance literally | MUStARD: validation safeguard **71.50% accuracy / 0.7149 Macro-F1**; five-fold coverage of all 690 examples per seed |
+| Video assistants and intent-triage research tools | Separate requests, complaints, suggestions and other intents to help a person prioritise the next response | MIntRec: selected seed 2026 **74.83% accuracy / 0.7219 Macro-F1**; all 445 test utterances; TV-dialogue proxy |
+| Public-talk archives and educational-video production teams | Review candidate humorous utterances with their setup when preparing excerpts or summaries | Preserved UR-FUNNY V1 result **68.84% accuracy / 0.6884 Macro-F1**; all 3,290 test samples; no new BGE result |
+
+The MOSEI/MELD values are actual **RTX 4090 GPU** measurements from 2026-10-29,
+averaged over three new BGE/LoRA branch seeds on fixed original backbones.
+MUStARD/CH-SIMS are CPU task-adaptation results across three original backbone
+seeds. MIntRec and the preserved UR-FUNNY result use their declared single primary
+seed. These aggregation units and tasks must not be treated as one common ranking.
+
+The new task adaptations retain old encoders/fusion and local-evidence/SAM heads,
+then add a BGE CLS branch with LoRA where matched text is available. Chinese
+sentiment uses Chinese BGE and regression; MELD has no vision input. These are
+dataset-specific adaptations, not unchanged reconstructions of the complete
+MIntRec BERT architecture. The original inference and adaptive-exit APIs below
+remain separate from these documented experiments.
+
+**Baseline status:** MOSEI/MELD improve their own original models. MUStARD remains
+slightly below the measured SVM (**71.59%**). CH-SIMS improves Ridge MAE
+(**0.2982 vs 0.3123**) but remains below Ridge Acc2 (**81.56% vs 82.11%**).
+MIntRec's selected score is slightly above the actual same-seed TCL-MAP rerun
+(**74.83% vs 74.61%**, one net correct example), with additional BGE capacity.
+These results do not establish stable superiority over recent strong baselines
+or state-of-the-art performance.
+
+[Application settings, importance and workflows](docs/APPLICATION_SCENARIOS.md) ·
+[Protocols, old/new comparisons and candidate results](docs/APPLICATION_EXPERIMENTS_20261029.md) ·
+[Machine-readable evidence](docs/results/application_scenarios_20261029/metrics.json)
+
+### Why These Scenarios Matter
+
+- **Opinion-video analysis:** polarity and intensity provide complementary ways
+  to organise large feedback collections. A segment index can preserve the
+  expressed view and its context for a researcher to inspect. The experiment
+  measures sentiment prediction, not product satisfaction or research efficiency.
+- **Conversation sentiment review:** different turns can express different
+  reactions. Per-turn tags could support a review queue, but MELD's scripted
+  dialogue does not validate actual customer-call outcomes or service quality.
+- **Chinese media retrieval:** sentiment metadata adds a way to browse speech
+  clips beyond keywords alone. Retrieval relevance and editing time still need
+  to be tested; the current benchmark measures the tagging component.
+- **Sarcasm-aware review:** literal wording can misrepresent intended meaning.
+  Keeping the target with its context gives a reviewer evidence to inspect;
+  predictions remain review cues rather than automatic judgments about intent.
+- **Intent triage:** emotion and requested action are different labels. Intent
+  categories can help structure a response queue, while real support traffic
+  and operational routing decisions require separate validation.
+
 ### Humor Review Assistance for Speech and Educational Videos
 
 This application scenario targets **public-talk video archives, university
@@ -599,7 +657,10 @@ Outputs include:
 
 ## Results
 
-### Standard MMSA Clean-Test Protocol
+### Original Pareto Ensemble: Historical Standard MMSA Results
+
+The original ensemble is preserved below. The separate 2026-10-29 BGE extension
+measured 86.36% nonzero Acc2 and 0.5133 MAE; see the application evidence above.
 
 The test set contains 4,659 CMU-MOSEI segments. Acc-2 and F1 use the non-zero
 protocol.
@@ -678,8 +739,10 @@ python src/cross_dataset_eval.py \
   --split test
 ```
 
-No domain adaptation is currently implemented; this interface represents a
-zero-shot transfer baseline only.
+This particular CLI is a zero-shot transfer interface and does not fine-tune a
+new domain adapter. The separately trained task adaptations in the application
+evidence above use their own dataset-specific protocols; they do not change
+this compatibility check or this CLI.
 
 ## Testing
 

@@ -3,6 +3,10 @@
 This file summarizes measured results included with the repository. Two
 evaluation protocols are reported and must not be mixed.
 
+The historical tables below are retained. New task-adaptation measurements are
+in [Section4](#4-application-extensions-recorded-on-2026-10-29) and the
+[complete application report](docs/APPLICATION_EXPERIMENTS_20261029.md).
+
 ## 1. Standard CMU-MOSEI Paper Protocol
 
 - Dataset: MMSA aligned CMU-MOSEI
@@ -11,7 +15,7 @@ evaluation protocols are reported and must not be mixed.
 - Acc-2 and F1: non-zero protocol
 - Ensemble weight: selected on validation only
 
-| Metric | Current Pareto Ensemble | E-MoE | Difference |
+| Metric | Original Pareto Ensemble | E-MoE | Difference |
 |---|---:|---:|---:|
 | Acc-7 | 54.046% | 54.10% | -0.054 pp |
 | Acc-2 | 85.250% | 85.30% | -0.050 pp |
@@ -89,3 +93,27 @@ See [the application scenario and its importance](docs/UR_FUNNY_APPLICATION_SCEN
 [the complete UR-FUNNY V1 report](docs/UR_FUNNY_V1_RESULTS.md),
 [original recorded metrics](docs/results/urfunny_v1_20261026/context_metrics.json)
 and [all numeric test predictions](docs/results/urfunny_v1_20261026/test_predictions.csv).
+
+## 4. Application Extensions Recorded on 2026-10-29
+
+| Proposed use | Dataset | Original | Validation-selected extension |
+|---|---|---|---|
+| Spoken-opinion review | MOSEI | Nonzero Acc2 85.25%; MAE 0.5344 | 86.36%; 0.5133 |
+| Conversation sentiment review | MELD, text+audio | Accuracy 66.28%; Macro-F1 0.6168 | 68.07%; 0.6466 |
+| Sarcasm hints for reviewers | MUStARD | Accuracy 71.11%; Macro-F1 0.7110 | 71.50%; 0.7149 |
+| Chinese clip tagging | CH-SIMS v2(s) | Acc2 81.59%; MAE 0.3014 | 81.56%; 0.2982 |
+| Intent-triage prototype | MIntRec | Protected anchor 74.16%; Macro-F1 0.7119 | Selected single run 74.83%; 0.7219 |
+
+MOSEI/MELD average 3 new branch seeds on fixed original backbones; MUStARD/
+CH-SIMS average 3 original backbone seeds. MIntRec uses the declared single
+primary run. The original UR-FUNNY 68.84% result above remains unchanged; no new
+BGE version is claimed. These are separate native tasks, not a common leaderboard.
+
+MUStARD remains below SVM 71.59%. CH-SIMS improves Ridge MAE but remains below
+Ridge Acc2 82.11%. MIntRec adds one net correct test prediction relative to the
+actual same-seed TCL-MAP rerun 74.61%, with extra pretrained BGE capacity. No stable
+recent-strong-baseline or state-of-the-art superiority is established.
+
+[Application importance and workflows](docs/APPLICATION_SCENARIOS.md) ·
+[Full protocols and candidate/fallback results](docs/APPLICATION_EXPERIMENTS_20261029.md) ·
+[Numeric metrics](docs/results/application_scenarios_20261029/metrics.json)

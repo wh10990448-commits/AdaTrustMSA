@@ -1,0 +1,540 @@
+{
+  "metric_tolerance": 1e-06,
+  "cases": [
+    {
+      "name": "mosei/original",
+      "metric_kind": "mosei_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "original",
+      "expected_metrics": {
+        "mmsa_acc_7": 0.54045932603563,
+        "mmsa_non0_acc_2": 0.852504127682994,
+        "mmsa_non0_f1": 0.8522517580003405,
+        "mmsa_mae": 0.5343600648976017,
+        "mmsa_corr": 0.7647916257324435
+      },
+      "n_per_seed": 4659,
+      "group_by_seed": false
+    },
+    {
+      "name": "mosei/prior_sam",
+      "metric_kind": "mosei_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "prior_sam",
+      "expected_metrics": {
+        "mmsa_acc_7": 0.541317879373256,
+        "mmsa_non0_acc_2": 0.8533296642817833,
+        "mmsa_non0_f1": 0.8532285990263345,
+        "mmsa_mae": 0.5336450315164291,
+        "mmsa_corr": 0.7665045390758259
+      },
+      "n_per_seed": 4659,
+      "group_by_seed": false
+    },
+    {
+      "name": "mosei/new_candidate",
+      "metric_kind": "mosei_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "new_candidate",
+      "expected_metrics": {
+        "mmsa_acc_7": 0.5479716677398584,
+        "mmsa_non0_acc_2": 0.8636030086222711,
+        "mmsa_non0_f1": 0.8635843371008588,
+        "mmsa_mae": 0.5133170690775954,
+        "mmsa_corr": 0.790475854830074
+      },
+      "n_per_seed": 4659,
+      "group_by_seed": false
+    },
+    {
+      "name": "mosei/validation_safeguarded",
+      "metric_kind": "mosei_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "validation_safeguarded",
+      "expected_metrics": {
+        "mmsa_acc_7": 0.5479716677398584,
+        "mmsa_non0_acc_2": 0.8636030086222711,
+        "mmsa_non0_f1": 0.8635843371008588,
+        "mmsa_mae": 0.5133170690775954,
+        "mmsa_corr": 0.790475854830074
+      },
+      "n_per_seed": 4659,
+      "group_by_seed": false
+    },
+    {
+      "name": "mosei/text_unchanged",
+      "metric_kind": "mosei_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "text_unchanged",
+      "expected_metrics": {
+        "mmsa_acc_7": 0.5335908993346211,
+        "mmsa_non0_acc_2": 0.8503026967528894,
+        "mmsa_non0_f1": 0.8497008592082725,
+        "mmsa_mae": 0.5458485562511296,
+        "mmsa_corr": 0.7568680831794494
+      },
+      "n_per_seed": 4659,
+      "group_by_seed": false
+    },
+    {
+      "name": "meld/original",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "original_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6628352490421456,
+        "macro_f1": 0.6167811418898635,
+        "weighted_f1": 0.6512416905176899
+      },
+      "n_per_seed": 2610,
+      "group_by_seed": false,
+      "classes": 3
+    },
+    {
+      "name": "meld/prior_sam",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "prior_sam_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6777777777777777,
+        "macro_f1": 0.6440527773950832,
+        "weighted_f1": 0.6717849519641189
+      },
+      "n_per_seed": 2610,
+      "group_by_seed": false,
+      "classes": 3
+    },
+    {
+      "name": "meld/new_candidate",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "new_candidate_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6807151979565772,
+        "macro_f1": 0.6466235144228284,
+        "weighted_f1": 0.6746286059403697
+      },
+      "n_per_seed": 2610,
+      "group_by_seed": false,
+      "classes": 3
+    },
+    {
+      "name": "meld/validation_safeguarded",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "validation_safeguarded_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6807151979565772,
+        "macro_f1": 0.6466235144228284,
+        "weighted_f1": 0.6746286059403697
+      },
+      "n_per_seed": 2610,
+      "group_by_seed": false,
+      "classes": 3
+    },
+    {
+      "name": "meld/text_unchanged",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+        "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv"
+      ],
+      "prediction_column": "text_unchanged_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6436781609195402,
+        "macro_f1": 0.6003463399662569,
+        "weighted_f1": 0.6330458031227877
+      },
+      "n_per_seed": 2610,
+      "group_by_seed": false,
+      "classes": 3
+    },
+    {
+      "name": "mustard/original",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "original_prediction",
+      "expected_metrics": {
+        "accuracy": 0.7111111111111111,
+        "macro_f1": 0.7109723871133031,
+        "weighted_f1": 0.7109723871133031
+      },
+      "n_per_seed": 690,
+      "group_by_seed": true,
+      "classes": 2
+    },
+    {
+      "name": "mustard/previous_sam_anchor",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "previous_sam_anchor_prediction",
+      "expected_metrics": {
+        "accuracy": 0.7120772946859905,
+        "macro_f1": 0.7119524229659651,
+        "weighted_f1": 0.7119524229659651
+      },
+      "n_per_seed": 690,
+      "group_by_seed": true,
+      "classes": 2
+    },
+    {
+      "name": "mustard/new_candidate",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "new_candidate_prediction",
+      "expected_metrics": {
+        "accuracy": 0.7144927536231883,
+        "macro_f1": 0.7144089354741588,
+        "weighted_f1": 0.7144089354741588
+      },
+      "n_per_seed": 690,
+      "group_by_seed": true,
+      "classes": 2
+    },
+    {
+      "name": "mustard/safeguarded",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "safeguarded_prediction",
+      "expected_metrics": {
+        "accuracy": 0.714975845410628,
+        "macro_f1": 0.7148926370940063,
+        "weighted_f1": 0.7148926370940063
+      },
+      "n_per_seed": 690,
+      "group_by_seed": true,
+      "classes": 2
+    },
+    {
+      "name": "mustard/text_unchanged",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "text_unchanged_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6415458937198067,
+        "macro_f1": 0.6407218303240284,
+        "weighted_f1": 0.6407218303240284
+      },
+      "n_per_seed": 690,
+      "group_by_seed": true,
+      "classes": 2
+    },
+    {
+      "name": "chsims/original",
+      "metric_kind": "chsims_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "original",
+      "expected_metrics": {
+        "Acc2": 0.8159252095422308,
+        "Acc3": 0.7430689877498389,
+        "Acc5": 0.5551257253384914,
+        "MAE": 0.3013804256916046,
+        "Corr": 0.70740112143898,
+        "binary_weighted_F1": 0.8166928638087395,
+        "binary_macro_F1": 0.8133801966911675
+      },
+      "n_per_seed": 1034,
+      "group_by_seed": true
+    },
+    {
+      "name": "chsims/previous_sam_anchor",
+      "metric_kind": "chsims_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "previous_sam_anchor",
+      "expected_metrics": {
+        "Acc2": 0.8104448742746615,
+        "Acc3": 0.7456479690522243,
+        "Acc5": 0.5589941972920697,
+        "MAE": 0.30121349294980365,
+        "Corr": 0.7061349290271894,
+        "binary_weighted_F1": 0.8112588572464446,
+        "binary_macro_F1": 0.8079155359616755
+      },
+      "n_per_seed": 1034,
+      "group_by_seed": true
+    },
+    {
+      "name": "chsims/new_candidate",
+      "metric_kind": "chsims_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "new_candidate",
+      "expected_metrics": {
+        "Acc2": 0.8175370728562218,
+        "Acc3": 0.7459703417150226,
+        "Acc5": 0.5535138620245004,
+        "MAE": 0.2956467568874359,
+        "Corr": 0.7142996984782387,
+        "binary_weighted_F1": 0.8183914428959792,
+        "binary_macro_F1": 0.8152925353305132
+      },
+      "n_per_seed": 1034,
+      "group_by_seed": true
+    },
+    {
+      "name": "chsims/safeguarded",
+      "metric_kind": "chsims_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "safeguarded",
+      "expected_metrics": {
+        "Acc2": 0.8156028368794326,
+        "Acc3": 0.7440361057382335,
+        "Acc5": 0.5535138620245004,
+        "MAE": 0.29819833238919574,
+        "Corr": 0.7108759551621849,
+        "binary_weighted_F1": 0.8164631384335905,
+        "binary_macro_F1": 0.8133149543981594
+      },
+      "n_per_seed": 1034,
+      "group_by_seed": true
+    },
+    {
+      "name": "chsims/text_unchanged",
+      "metric_kind": "chsims_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv"
+      ],
+      "prediction_column": "text_unchanged",
+      "expected_metrics": {
+        "Acc2": 0.7627337201805288,
+        "Acc3": 0.7014829142488717,
+        "Acc5": 0.4484203739522889,
+        "MAE": 0.37443995475769043,
+        "Corr": 0.6243992153808183,
+        "binary_weighted_F1": 0.7627747281252225,
+        "binary_macro_F1": 0.7573335402490488
+      },
+      "n_per_seed": 1034,
+      "group_by_seed": true
+    },
+    {
+      "name": "mintrec/candidate",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mintrec/selected_seed2026_test_predictions.csv"
+      ],
+      "prediction_column": "full_prediction",
+      "expected_metrics": {
+        "accuracy": 0.748314606741573,
+        "macro_f1": 0.7218960675383127
+      },
+      "n_per_seed": 445,
+      "group_by_seed": false,
+      "classes": 20
+    },
+    {
+      "name": "mintrec/tcl_map",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mintrec/tcl_map_seed2026_test_predictions.csv"
+      ],
+      "prediction_column": "prediction",
+      "expected_metrics": {
+        "accuracy": 0.7460674157303371,
+        "macro_f1": 0.7141575362215324
+      },
+      "n_per_seed": 445,
+      "group_by_seed": false,
+      "classes": 20
+    },
+    {
+      "name": "mintrec/protected_anchor",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/mintrec/protected_anchor_seed2026_test_predictions.csv"
+      ],
+      "prediction_column": "prediction",
+      "expected_metrics": {
+        "accuracy": 0.7415730337078652,
+        "macro_f1": 0.7119006282648723
+      },
+      "n_per_seed": 445,
+      "group_by_seed": false,
+      "classes": 20
+    },
+    {
+      "name": "urfunny/original",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/urfunny_v1_20261026/test_predictions.csv"
+      ],
+      "prediction_column": "TAV_prediction",
+      "expected_metrics": {
+        "accuracy": 0.6884498480243161,
+        "macro_f1": 0.6884495889770328,
+        "weighted_f1": 0.6884483800897107
+      },
+      "n_per_seed": 3290,
+      "group_by_seed": false,
+      "classes": 2
+    },
+    {
+      "name": "mustard/traditional_SVM",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/baselines/mustard_traditional_oof.csv"
+      ],
+      "prediction_column": "svm_TAV_context",
+      "expected_metrics": {
+        "accuracy": 0.7159420289855073,
+        "macro_f1": 0.7157031742694976
+      },
+      "n_per_seed": 690,
+      "group_by_seed": false,
+      "classes": 2
+    },
+    {
+      "name": "chsims/traditional_Ridge",
+      "metric_kind": "chsims_regression",
+      "files": [
+        "docs/results/application_scenarios_20261029/baselines/chsims_ridge_test.csv"
+      ],
+      "prediction_column": "ridge_TAV",
+      "expected_metrics": {
+        "MAE": 0.31225308775901794,
+        "Corr": 0.7224133113814469,
+        "Acc2": 0.8210831721470019,
+        "Acc3": 0.7272727272727273,
+        "Acc5": 0.5077369439071566,
+        "binary_weighted_F1": 0.8219600235550384,
+        "binary_macro_F1": 0.8188423296597979
+      },
+      "n_per_seed": 1034,
+      "group_by_seed": false
+    },
+    {
+      "name": "meld/traditional_logistic",
+      "metric_kind": "classification",
+      "files": [
+        "docs/results/application_scenarios_20261029/baselines/meld_logistic_test.csv"
+      ],
+      "prediction_column": "logistic_prediction",
+      "expected_metrics": {
+        "accuracy": 0.5038314176245211,
+        "macro_f1": 0.42416595518230554,
+        "weighted_f1": 0.46557282593987653
+      },
+      "n_per_seed": 2610,
+      "group_by_seed": false,
+      "classes": 3
+    }
+  ],
+  "unique_ID_check_scope": "Within each test partition/seed; published test files alone do not verify training isolation.",
+  "prediction_files": [
+    {
+      "path": "docs/results/application_scenarios_20261029/baselines/chsims_ridge_test.csv",
+      "sha256": "e080d480463d3c2be17cabed34842aa176de6f51972bf9a73d094266e93f5524"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/baselines/meld_logistic_test.csv",
+      "sha256": "7818a644494aa8053e17b44620e47611123ee15f8d45c4b349b591dbbb83a9b6"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/baselines/mustard_traditional_oof.csv",
+      "sha256": "09786992f1caba1d98bf7b84e87928bee911a74940ef1a6b2a2da2bb56ad3f31"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv",
+      "sha256": "7e11e95803751b42df19d90baedd16d6eb10589a9df22b024bacb4cbc82f1520"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+      "sha256": "7f0270e4176478c0c8929fba1c072b7d48e295775d3681ff33c87bee772ea2de"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+      "sha256": "9a99d7b9ee91c720239aa1a8c888e6b6d69cb12a4efb46992dd0ee2aed129f5d"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv",
+      "sha256": "57c2d04163765be4712cc967f4d92133773288ecb7f6960866c9c36045a64c03"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mintrec/protected_anchor_seed2026_test_predictions.csv",
+      "sha256": "b15736bf8dded29eb032c03c287311e73e06403e81c61b401fbd552a4cb953ed"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mintrec/selected_seed2026_test_predictions.csv",
+      "sha256": "ca23d1a5f2a54200a3aba054e5e6bb59441e35f402605231576ef03c8fef0bd8"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mintrec/tcl_map_seed2026_test_predictions.csv",
+      "sha256": "83bb995cc7c5b10689714768a8a24929b4d4f9f6fad402b3a84c8ccefc805722"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+      "sha256": "98b2ad56d069ace46cb6df814e3d0630f2068a33dfff3d38d05f9a0516f1a5c1"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+      "sha256": "1fe857a6ce5cb5d2ce1b8937631d7d01f82037dcbcae367abf22f13de5f90bff"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv",
+      "sha256": "99118f1119c604f6ec4b3358e5e51afd9e38ce8b4765941c78bbe0783a0ec68f"
+    },
+    {
+      "path": "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv",
+      "sha256": "718a3c3632be6c771329ee0cab30349e00a40cb6c018af117162a761eabb5fb4"
+    },
+    {
+      "path": "docs/results/urfunny_v1_20261026/test_predictions.csv",
+      "sha256": "9e1de80ab73fdb39c4c57bf9de72ccf88fb2cd4df60f869b0cf47b87b588b50d"
+    }
+  ],
+  "hash_convention": "SHA256 of file bytes with CRLF normalized to LF"
+}

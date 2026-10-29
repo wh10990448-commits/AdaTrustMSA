@@ -1,0 +1,83 @@
+{
+  "published_files": [
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mosei/seed_2026_test_predictions.csv",
+      "sha256": "98b2ad56d069ace46cb6df814e3d0630f2068a33dfff3d38d05f9a0516f1a5c1",
+      "source_artifact_sha256": "98b2ad56d069ace46cb6df814e3d0630f2068a33dfff3d38d05f9a0516f1a5c1"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mosei/seed_2027_test_predictions.csv",
+      "sha256": "1fe857a6ce5cb5d2ce1b8937631d7d01f82037dcbcae367abf22f13de5f90bff",
+      "source_artifact_sha256": "1fe857a6ce5cb5d2ce1b8937631d7d01f82037dcbcae367abf22f13de5f90bff"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mosei/seed_2028_test_predictions.csv",
+      "sha256": "99118f1119c604f6ec4b3358e5e51afd9e38ce8b4765941c78bbe0783a0ec68f",
+      "source_artifact_sha256": "99118f1119c604f6ec4b3358e5e51afd9e38ce8b4765941c78bbe0783a0ec68f"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/meld/seed_2026_test_predictions.csv",
+      "sha256": "7f0270e4176478c0c8929fba1c072b7d48e295775d3681ff33c87bee772ea2de",
+      "source_artifact_sha256": "7f0270e4176478c0c8929fba1c072b7d48e295775d3681ff33c87bee772ea2de"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/meld/seed_2027_test_predictions.csv",
+      "sha256": "9a99d7b9ee91c720239aa1a8c888e6b6d69cb12a4efb46992dd0ee2aed129f5d",
+      "source_artifact_sha256": "9a99d7b9ee91c720239aa1a8c888e6b6d69cb12a4efb46992dd0ee2aed129f5d"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/meld/seed_2028_test_predictions.csv",
+      "sha256": "57c2d04163765be4712cc967f4d92133773288ecb7f6960866c9c36045a64c03",
+      "source_artifact_sha256": "57c2d04163765be4712cc967f4d92133773288ecb7f6960866c9c36045a64c03"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mustard/all_seed_test_predictions.csv",
+      "sha256": "718a3c3632be6c771329ee0cab30349e00a40cb6c018af117162a761eabb5fb4",
+      "source_artifact_sha256": "65457fa663e8aaf2cbf2b848e35b11d62bc658ad03cda62a2241065d134242ae"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/chsims/all_seed_test_predictions.csv",
+      "sha256": "7e11e95803751b42df19d90baedd16d6eb10589a9df22b024bacb4cbc82f1520",
+      "source_artifact_sha256": "aca2854fd291616e3a7b1259e4cefd2aa2040610179a58b44aba96807e78fe70"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mintrec/selected_seed2026_test_predictions.csv",
+      "sha256": "ca23d1a5f2a54200a3aba054e5e6bb59441e35f402605231576ef03c8fef0bd8",
+      "source_artifact_sha256": "161ae75808fa2201afc00853bcb61cf5b4a9e21884adc19d69a8ff2ca9611527"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mintrec/tcl_map_seed2026_test_predictions.csv",
+      "sha256": "83bb995cc7c5b10689714768a8a24929b4d4f9f6fad402b3a84c8ccefc805722",
+      "source_artifact_sha256": "83bb995cc7c5b10689714768a8a24929b4d4f9f6fad402b3a84c8ccefc805722"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/mintrec/protected_anchor_seed2026_test_predictions.csv",
+      "sha256": "b15736bf8dded29eb032c03c287311e73e06403e81c61b401fbd552a4cb953ed",
+      "source_artifact_sha256": "341e479fb62509f2612be7c2dda8066c5569b14f97425c747f736a5559167e2a"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/baselines/mustard_traditional_oof.csv",
+      "sha256": "09786992f1caba1d98bf7b84e87928bee911a74940ef1a6b2a2da2bb56ad3f31",
+      "source_artifact_sha256": "09786992f1caba1d98bf7b84e87928bee911a74940ef1a6b2a2da2bb56ad3f31"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/baselines/chsims_ridge_test.csv",
+      "sha256": "e080d480463d3c2be17cabed34842aa176de6f51972bf9a73d094266e93f5524",
+      "source_artifact_sha256": "b7dd91ec2e6670c6111ff877b907a047a708358e7d8d7a6deba83eaba618cb13"
+    },
+    {
+      "published_path": "docs/results/application_scenarios_20261029/baselines/meld_logistic_test.csv",
+      "sha256": "7818a644494aa8053e17b44620e47611123ee15f8d45c4b349b591dbbb83a9b6",
+      "source_artifact_sha256": "802eaa77e3ab64557e98476dcf99c5a61408e7bd88cbbf5dd93380d2b46fa4a6"
+    }
+  ],
+  "audit_source_hashes": {
+    "gpu_audit": "31afedb867c541464e5b3f995d7310cbd980b411d3010bf960ab1ec341f105fc",
+    "cpu_audit": "84296b5c7d549a683e0b783f418815b6539a24220d874996649cab4e69525a23",
+    "mintrec_audit": "45df41ce55cb57bc4876e3681321815e761e59130789f33cbd83d6332dcd9e1d"
+  },
+  "scope": "Numeric prediction evidence and aggregate records; no raw texts/videos, credentials, pretrained weights or private machine paths.",
+  "MELD_label_handling": "Author joint records contain all split labels and setup constructs test target arrays; fitting/calibration/selection use only train/validation targets. No claim that labels were physically absent from source files.",
+  "encoder_context": "Additional pretrained BGE capacity and compute. Task-specific heads/feature-adapter anchors differ between datasets. Main repo inference APIs are unchanged.",
+  "published_sha256_convention": "File bytes with CRLF normalized to LF; source_artifact_sha256 retains the original raw-byte hash"
+}
